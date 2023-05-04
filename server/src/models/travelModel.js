@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const ObjectId = mongoose.Schema.Types.ObjectId;
 const travelSchema = new mongoose.Schema({
   tripName: {
-    unique: true,
     type: String,
     require: true,
     trim: true,
@@ -28,7 +27,7 @@ const travelSchema = new mongoose.Schema({
   places: [
     {
       placeName: { type: String },
-      date: { type: String, default: Date.now },
+      date: { type: String },
       activity: [
         {
           type: String,

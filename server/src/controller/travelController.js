@@ -5,7 +5,7 @@ const createTravel = async (req, res) => {
     const data = req.body;
     // console.log(data);
     const userId = req.tokenDetails.userId;
-
+    console.log(data);
     const {
       tripName,
       startDate,
@@ -146,7 +146,7 @@ const getTravelDetailsById = async (req, res) => {
 
     return res.status(200).json({ data: travelData });
   } catch (error) {
-    console.log("error in getTravel", error.message);
+    console.log("error in getTravelById", error.message);
     return res.status(500).send({ message: error.message });
   }
 };
